@@ -1,7 +1,9 @@
-"""Assignment 3, CS440/640, Spring 2014.  Logical Reasoning.
+# 
+# This module implements an logical agent and a world for it to explore.
+#
+# Compiled against Python 2.7
+# Author: Stephen Bahr (sbahr@bu.edu)
 
-This module implements an logical agent and a world for it to explore.
-"""
 import logic
 import logic_440
 
@@ -9,12 +11,12 @@ class WumpusWorldAgent(logic_440.KnowledgeBasedAgent):
   def __init__(self, cave_size):
     self.KB = logic.PropKB()
     self.size = cave_size
-    # FIXME - initialize the knowledgebase with appropriate
+
+    # example of propositional logic
     #self.KB.tell("B11 <=> (P12|P21)")
     #self.KB.tell("~B11")
 
     # background knowledge about the wumpus world
-
     # Every x on the board
     for x in range(1, cave_size + 1):
         #Every y on the board
@@ -50,9 +52,11 @@ class WumpusWorldAgent(logic_440.KnowledgeBasedAgent):
             self.KB.tell(notB)
             self.KB.tell(S)
             self.KB.tell(notS)
-
   def safe(self):
-    # FIXME - use logic to determine the set of locations I can prove to be safe
+    """
+    Use logic to determine the set of locations I can prove to be safe.
+    """
+
     safe_spots = set()
     for x in range(1, self.size + 1):
         for y in range(1, self.size + 1):
@@ -78,7 +82,9 @@ class WumpusWorldAgent(logic_440.KnowledgeBasedAgent):
     return safe_spots
 
   def not_unsafe(self):
-    # FIXME - use logic to determine the set of locations I can't prove to be unsafe
+    """
+    Use logic to determine the set of locations I can't prove to be unsafe
+    """
     not_unsafe_spots = set()
     for x in range(1, self.size + 1):
         for y in range(1, self.size + 1):
@@ -104,7 +110,9 @@ class WumpusWorldAgent(logic_440.KnowledgeBasedAgent):
     return not_unsafe_spots
 
   def unvisited(self):
-    # FIXME - use logic to determine the set of locations I haven't visited yet.
+    """
+    Use logic to determine the set of locations I haven't visited yet.
+    """
     result = set()
     for x in range(1, self.size + 1):
         for y in range(1, self.size + 1):
@@ -116,6 +124,9 @@ class WumpusWorldAgent(logic_440.KnowledgeBasedAgent):
 NEIGHBOR_DELTAS = ((+1, 0), (-1, 0), (0, +1), (0, -1))
 
 def get_neighbors(x, y, cave_size):
+  """
+  Return a list of neighbors given the canvas size, and the current coordinates
+  """
   possible_neighbors = [(x + dx, y + dy) for dx, dy in NEIGHBOR_DELTAS]
   return [(x1, y1) for x1, y1 in possible_neighbors if 
       1 <= x1 <= cave_size and 1 <= y1 <= cave_size]

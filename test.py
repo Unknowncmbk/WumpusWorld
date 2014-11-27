@@ -1,6 +1,12 @@
+# 
+# This module provides test cases for various methods for the Wumpus Agent.
+#
+# Compiled against Python 2.7
+# Author: Stephen Bahr (sbahr@bu.edu)
+
 import unittest
 
-import hw3
+import wumpus
 import logic
 import logic_440
 

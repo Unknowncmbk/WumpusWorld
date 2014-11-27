@@ -1,14 +1,13 @@
-"""Library of logic functions for Assignment 3, CS440, Spring 2014
+# 
+# resolution(KB, q): Given a propositional knowledge base and query, return
+# whether the query can be inferred from the knowledgebase using resolution.
+# The implementation is more efficient than pl_resolution in the AIMA code.
 
-This module contains two items for use in assignment 3.
-
-resolution(KB, q): Given a propositional knowledge base and query, return
-whether the query can be inferred from the knowledgebase using resolution.
-The implementation is more efficient than pl_resolution in the AIMA code.
-
-KnowledgeBasedAgent: An abstract class that makes decisions to navigate
-through a world based on its knowledge.
-"""
+# KnowledgeBasedAgent: An abstract class that makes decisions to navigate
+# through a world based on its knowledge.
+#
+# Compiled against Python 2.7
+# Author: Stephen Bahr (sbahr@bu.edu)
 
 import collections
 import logic

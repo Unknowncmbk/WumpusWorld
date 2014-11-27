@@ -1,6 +1,8 @@
-"""Provide some widely useful utilities. Safe for "from utils import *".
-
-"""
+# 
+# This module provides some widely useful utilities. Safe for "from utils import *".
+#
+# Compiled against Python 2.7
+# Author: Stephen Bahr (sbahr@bu.edu)
 
 from __future__ import generators
 import random

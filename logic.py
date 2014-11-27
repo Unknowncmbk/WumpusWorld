@@ -1,24 +1,22 @@
-"""Representations and Inference for Logic (Chapters 7-9, 12)
-
-Covers both Propositional and First-Order Logic. First we have four
-important data types:
-
-    KB            Abstract class holds a knowledge base of logical expressions
-    Expr          A logical expression
-    substitution  Implemented as a dictionary of var:value pairs, {x:1, y:x}
-
-Be careful: some functions take an Expr as argument, and some take a KB.
-Then we implement various functions for doing logical inference:
-
-    tt_entails       Say if a statement is entailed by a KB
-
-And a few other functions:
-
-    to_cnf           Convert to conjunctive normal form
-
-[ebreck]: This module has been simplified to the subset of code needed for
-Assignment 3.
-"""
+# 
+# This module covers both Propositional and First-Order logic.
+#
+# Important data types:
+# 
+#     KB            Abstract class holds a knowledge base of logical expressions
+#     Expr          A logical expression
+#     substitution  Implemented as a dictionary of var:value pairs, {x:1, y:x}
+#
+# Some functions take Expr as an argument and others take a KB. Various
+# functions are implemented for doing logicial inference:
+#     tt_entails       Say if a statement is entailed by a KB
+#
+# and a few other functions:
+#
+#      to_cnf           Convert to conjunctive normal form
+#
+# Compiled against Python 2.7
+# Author: Stephen Bahr (sbahr@bu.edu)
 
 from utils import *
 
